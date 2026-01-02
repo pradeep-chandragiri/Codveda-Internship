@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import userRoutes from './routes/userRoutes.js';
 
 // Initialize Express app
@@ -7,6 +8,7 @@ const PORT = 3000;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+app.use(cors({ origin: 'http://127.0.0.1:5500' }));
 
 // Sample route
 app.get('/', (req, res) => {

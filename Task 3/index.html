@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple REST API's</title>
+    <link rel="stylesheet" href="./assets/Styles/index.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="web-title">
+            <h2>Codveda Internship - CRUD Operations</h2>
+            <p><span onclick="createUser()" style="cursor: pointer;">+ Create New</span></p>
+        </div>
+
+        <!-- container to display user data -->
+        <div class="data-container" id="data-container">
+            <!-- User data will be populated here -->
+            
+        </div>
+
+    </div>
+
+    <!-- Update user -->
+    <div class="update-user">
+        <div class="update-container">
+            <h2>Update </h2>
+            <p>Update name and email of the user.</p>
+
+            <form onsubmit="submitUpdate(event)">
+                <div class="inpBox">
+                    <span>Name</span>
+                    <div class="inp-bx">
+                        <input type="text" name="name" id="name" placeholder="Enter your name" autocomplete="off" autocorrect="off" spellcheck="false" required>
+                    </div>
+                </div>
+                <div class="inpBox">
+                    <span>Email</span>
+                    <div class="inp-bx">
+                        <input type="email" name="email" id="email" placeholder="Enter your email" autocomplete="off" autocorrect="off" spellcheck="false" required>
+                    </div>
+                </div>
+                <div class="submit-btns">
+                    <button type="button" onclick="closeUpdate()">Cancel</button>
+                    <button>Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Create new user -->
+    <div class="create-user">
+        <div class="update-container">
+            <h2>Create New User </h2>
+            <p>Create new user with name and email.</p>
+
+            <form onsubmit="submitCreate(event)">
+                <div class="inpBox">
+                    <span>Name</span>
+                    <div class="inp-bx">
+                        <input type="text" name="name" id="new-name" placeholder="Enter your name" autocomplete="off" autocorrect="off" spellcheck="false" required>
+                    </div>
+                </div>
+                <div class="inpBox">
+                    <span>Email</span>
+                    <div class="inp-bx">
+                        <input type="email" name="email" id="new-email" placeholder="Enter your email" autocomplete="off" autocorrect="off" spellcheck="false" required>
+                    </div>
+                </div>
+                <div class="submit-btns">
+                    <button type="button" onclick="closeCreate()">Cancel</button>
+                    <button>Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./assets/JavaScript/helpers.js"></script>
+    <script src="./assets/JavaScript/services.js">
+
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchData();
+        });
+
+    </script>
+</body>
+</html>
