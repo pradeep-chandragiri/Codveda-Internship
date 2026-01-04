@@ -15,7 +15,7 @@ export const createUser = (req, res) => {
         }
         
         const newUser = {
-            id: users.length + 1,
+            id: Date.now(),
             name: name.trim(),
             email: email.trim()
         };

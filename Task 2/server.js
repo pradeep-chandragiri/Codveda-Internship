@@ -8,7 +8,7 @@ const PORT = 3000;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
-app.use(cors({ origin: 'http://127.0.0.1:5500' }));
+app.use(cors());
 
 // Sample route
 app.get('/', (req, res) => {
